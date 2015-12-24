@@ -1,0 +1,40 @@
+/*
+ * Specify mixins
+ * @import mixins
+ * @include <mixin name>
+ */
+
+@import "animations";
+
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin poscenter {
+	position: absolute;
+	top: 5%;
+	left: 40%;
+	margin-top: 0;
+	margin-left: -250px;
+}
+
+@mixin hidden {
+	text-indent: 9999px;
+}
+
+@mixin blinkcolor {
+	animation-name: colorchange;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+	-webkit-animation-name: colorchange;
+	-webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+}

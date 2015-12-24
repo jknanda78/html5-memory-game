@@ -1,0 +1,17 @@
+/*
+ * Specify form input elements
+ * @import form-inputs
+ */
+
+input[type="button"] {
+  padding: 8px;
+  border: none;
+  width: 100px;
+  font-weight: bold;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+input:focus {
+	outline: none;
+}

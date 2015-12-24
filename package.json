@@ -1,0 +1,56 @@
+{
+  "name": "HTML5-Memory-Game",
+  "version": "0.1.0",
+  "description": "HTML5-Memory-Game",
+  "author": {
+    "name": "Jyoti Kaustuv Nanda",
+    "email": "j_k_nanda@hotmail.com",
+    "url": "http://apps.jsfoobar.com/memory-game"
+  },
+  "homepage": "http://www.jsfoobar.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jknanda78/html5-game-app.git"
+  },
+
+  "scripts": {
+    "start": "servedir",
+    "watch": "watchify index.js -d -o resources/js/bundle.js -v",
+    "all": "grunt & npm start",
+    "test": "grunt test"
+  },
+
+  "dependencies": {
+    "jquery": "1.11.1",
+    "underscore": "^1.7.0",
+    "react": "^0.13.1",
+    "react-router": "^0.13.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-react": "^6.1.2",
+    "babelify": "^7.2.0",
+    "domready": "^0.3.0",
+    "grunt": "^0.4.5",
+    "grunt-timer":"^0.6.0",
+    "grunt-browserify": "^3.8.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-jasmine": "^0.8.2",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-watchify": "^0.1.0",
+    "reactify": "^0.17.0",
+    "servedir": "^0.2.2"
+  },
+
+  "browserify": {
+    "transform": [
+      [
+        "babelify", {"presets": ["es2015", "react"]}
+      ]
+    ]
+  },
+
+  "main": "index.js"
+}

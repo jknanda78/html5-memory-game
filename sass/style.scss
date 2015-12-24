@@ -1,0 +1,192 @@
+/*
+ * all imports
+ */
+@import "susy";
+@import "mixins";
+@import "form-inputs";
+
+//Normalization
+* {box-sizing: border-box;}
+* {margin: 0;padding: 0}
+a:hover, a:link, a:visited, a:active {text-decoration: none; color: none;}
+ul li {list-style-type: none;}
+header, nav, main, section, main, aside, footer, div, p, ul, li {@include clearfix;}
+
+body, html {
+  font-family: 'Pontano Sans', sans-serif; 
+  font-size: 100%; 
+  background: #5F5C5C; 
+  width: 100%; 
+  height:100%;
+
+  .container {
+    @include poscenter;
+    border: 5px solid #CCCCCC;
+    padding: 5px;
+    min-width: 765px;
+  }
+}
+
+header {
+  h1 {
+    color: #F4F4F4;
+    text-align: center;
+    padding: 5px;
+  }
+
+  nav.levels {
+    padding: 5px;
+    
+    ul {
+      @include pre(18%);
+    }
+
+    ul li {
+      background-color: #F4F4F4;
+      border: 1px solid #CCCCCC;
+      border-radius: 5px;
+      float: left;
+      margin-right: 10px;
+      padding: 5px;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    li.selected {
+      background-color: #5F5C5C;
+      @include blinkcolor;
+    }
+  }
+}
+
+main {
+  @include clearfix;
+
+  .level1{
+    @include pre(23%);
+  }
+
+  .level2 {
+    @include pre(15%);
+  }
+
+  .level3 {
+    @include pre(8%);
+  }
+}
+
+.game {
+  .column {
+    position: relative;
+    float: left;
+    width: 1px;
+    height: 1px;
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid #C0C0C0;
+    background-color: #F4F4F4;
+    font-weight: bold;
+    cursor: pointer;
+    perspective: 800px;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 2em;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+
+    .front {
+      @include hidden;
+      background: #403838;
+      color: #807A7A;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .back {
+      background: #868383;
+      transform: rotateY( 180deg );
+    }
+
+    .image1 {
+      background-image: url('../resources/images/even1.png');
+      background-color: #5F5C5C;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+    }
+
+    .image2 {
+      background-image: url('../resources/images/even2.png');
+      background-color: #5F5C5C;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+    }
+
+    .image3 {
+      background-image: url('../resources/images/even3.png');
+      background-color: #5F5C5C;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+    }
+
+    .image4 {
+      background-image: url('../resources/images/even4.png');
+      background-color: #5F5C5C;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+    }
+
+    .image5 {
+      background-image: url('../resources/images/even5.png');
+      background-color: #5F5C5C;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+    }
+
+    .image6 {
+      background-image: url('../resources/images/even6.png');
+      background-color: #5F5C5C;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+    }
+
+    span {
+      margin: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+    }
+  }
+
+  .flipped {
+    transform: rotateY( -180deg );
+  }
+
+  .animate {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: width 2s, height 4s;
+    transition: width 2s, height 4s;
+  }
+}
+
+.footer {
+  text-align: right;
+  color: #F4F4F4;
+  font-size: 0.8em;
+}
