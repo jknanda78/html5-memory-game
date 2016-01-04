@@ -21,7 +21,14 @@ module.exports = function(grunt) {
     browserify: {
       test: {
         src: ['spec/*.js'],
-        dest: 'spec/spec-bundle.js'
+        dest: 'spec/spec-bundle.js',
+        options: {
+          transform: [
+            ["babelify", {
+              "presets": ["es2015", "react"]
+            }]
+          ]
+        }
       }
     },
     jasmine: {
@@ -30,6 +37,11 @@ module.exports = function(grunt) {
           specs: 'spec/spec-bundle.js'
         }
       }
+    },
+    githooks: {
+      all: {
+        'pre-commit': 'test'
+      }
     }
   });
 
@@ -37,9 +49,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-githooks');
 
   grunt.registerTask('default', ['sass', 'clean:browserify', 'browserify:test', 'jasmine:test']);
-  grunt.registerTask('scss', ['sass']);
   grunt.registerTask('test', ['clean:browserify', 'browserify:test', 'jasmine:test']);
-  grunt.registerTask('production', ['clean:browserify', 'browserify:test', 'jasmine:test']);
+  grunt.registerTask('scss', ['sass']);
 };

@@ -131,8 +131,8 @@ main .level3 {
 .game .column {
   position: relative;
   float: left;
-  width: 1px;
-  height: 1px;
+  width: 100px;
+  height: 100px;
   padding: 5px;
   margin: 2px;
   border: 1px solid #C0C0C0;
