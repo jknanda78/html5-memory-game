@@ -44,7 +44,7 @@
     "grunt-contrib-cssmin": "^0.12.3",
     "grunt-githooks": "^0.4.0",
     "grunt-watchify": "^0.1.0",
-    "jquery": "1.11.1",
+    "jquery": "^3.0.0",
     "servedir": "^0.2.2",
     "underscore": "^1.7.0"
   },
